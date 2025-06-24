@@ -1,0 +1,12 @@
+{
+  "tasks": {
+    "build": "GOOS=wasip1 GOARCH=wasm go build -buildmode=c-shared -trimpath -ldflags=\"-s -w\" -o examples/h.wasm examples/h.go",
+    "serve": "deno run -A examples/basic_server.ts",
+    "lint": "deno lint",
+    "fmt": "deno fmt"
+  },
+  "compilerOptions": {
+    "lib": ["dom", "deno.window"],
+    "strict": true
+  }
+} 
