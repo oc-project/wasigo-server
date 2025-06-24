@@ -9,7 +9,7 @@ import (
 type myHandler struct{}
 
 func (h myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("hello from user code"))
+	w.Write([]byte("hello from user code" + r.URL.Path))
 }
 
 func init() {
